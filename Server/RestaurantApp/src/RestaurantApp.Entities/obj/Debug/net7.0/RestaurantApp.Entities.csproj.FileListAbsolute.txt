@@ -1,0 +1,11 @@
+C:\Users\User\Desktop\RestaurantApp\Server\RestaurantApp\src\RestaurantApp.Entities\bin\Debug\net7.0\RestaurantApp.Entities.deps.json
+C:\Users\User\Desktop\RestaurantApp\Server\RestaurantApp\src\RestaurantApp.Entities\bin\Debug\net7.0\RestaurantApp.Entities.dll
+C:\Users\User\Desktop\RestaurantApp\Server\RestaurantApp\src\RestaurantApp.Entities\bin\Debug\net7.0\RestaurantApp.Entities.pdb
+C:\Users\User\Desktop\RestaurantApp\Server\RestaurantApp\src\RestaurantApp.Entities\obj\Debug\net7.0\RestaurantApp.Entities.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\RestaurantApp\Server\RestaurantApp\src\RestaurantApp.Entities\obj\Debug\net7.0\RestaurantApp.Entities.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\RestaurantApp\Server\RestaurantApp\src\RestaurantApp.Entities\obj\Debug\net7.0\RestaurantApp.Entities.AssemblyInfo.cs
+C:\Users\User\Desktop\RestaurantApp\Server\RestaurantApp\src\RestaurantApp.Entities\obj\Debug\net7.0\RestaurantApp.Entities.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\RestaurantApp\Server\RestaurantApp\src\RestaurantApp.Entities\obj\Debug\net7.0\RestaurantApp.Entities.dll
+C:\Users\User\Desktop\RestaurantApp\Server\RestaurantApp\src\RestaurantApp.Entities\obj\Debug\net7.0\refint\RestaurantApp.Entities.dll
+C:\Users\User\Desktop\RestaurantApp\Server\RestaurantApp\src\RestaurantApp.Entities\obj\Debug\net7.0\RestaurantApp.Entities.pdb
+C:\Users\User\Desktop\RestaurantApp\Server\RestaurantApp\src\RestaurantApp.Entities\obj\Debug\net7.0\ref\RestaurantApp.Entities.dll

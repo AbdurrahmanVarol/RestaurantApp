@@ -1,0 +1,17 @@
+C:\Users\User\Desktop\RestaurantApp\Server\RestaurantApp\src\RestaurantApp.DataAccess\bin\Debug\net7.0\RestaurantApp.DataAccess.deps.json
+C:\Users\User\Desktop\RestaurantApp\Server\RestaurantApp\src\RestaurantApp.DataAccess\bin\Debug\net7.0\RestaurantApp.DataAccess.runtimeconfig.json
+C:\Users\User\Desktop\RestaurantApp\Server\RestaurantApp\src\RestaurantApp.DataAccess\bin\Debug\net7.0\RestaurantApp.DataAccess.dll
+C:\Users\User\Desktop\RestaurantApp\Server\RestaurantApp\src\RestaurantApp.DataAccess\bin\Debug\net7.0\RestaurantApp.DataAccess.pdb
+C:\Users\User\Desktop\RestaurantApp\Server\RestaurantApp\src\RestaurantApp.DataAccess\bin\Debug\net7.0\RestaurantApp.Entities.dll
+C:\Users\User\Desktop\RestaurantApp\Server\RestaurantApp\src\RestaurantApp.DataAccess\bin\Debug\net7.0\RestaurantApp.Entities.pdb
+C:\Users\User\Desktop\RestaurantApp\Server\RestaurantApp\src\RestaurantApp.DataAccess\obj\Debug\net7.0\RestaurantApp.DataAccess.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\RestaurantApp\Server\RestaurantApp\src\RestaurantApp.DataAccess\obj\Debug\net7.0\RestaurantApp.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\RestaurantApp\Server\RestaurantApp\src\RestaurantApp.DataAccess\obj\Debug\net7.0\RestaurantApp.DataAccess.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\RestaurantApp\Server\RestaurantApp\src\RestaurantApp.DataAccess\obj\Debug\net7.0\RestaurantApp.DataAccess.AssemblyInfo.cs
+C:\Users\User\Desktop\RestaurantApp\Server\RestaurantApp\src\RestaurantApp.DataAccess\obj\Debug\net7.0\RestaurantApp.DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\RestaurantApp\Server\RestaurantApp\src\RestaurantApp.DataAccess\obj\Debug\net7.0\RestaurantApp.DataAccess.csproj.CopyComplete
+C:\Users\User\Desktop\RestaurantApp\Server\RestaurantApp\src\RestaurantApp.DataAccess\obj\Debug\net7.0\RestaurantApp.DataAccess.dll
+C:\Users\User\Desktop\RestaurantApp\Server\RestaurantApp\src\RestaurantApp.DataAccess\obj\Debug\net7.0\refint\RestaurantApp.DataAccess.dll
+C:\Users\User\Desktop\RestaurantApp\Server\RestaurantApp\src\RestaurantApp.DataAccess\obj\Debug\net7.0\RestaurantApp.DataAccess.pdb
+C:\Users\User\Desktop\RestaurantApp\Server\RestaurantApp\src\RestaurantApp.DataAccess\obj\Debug\net7.0\RestaurantApp.DataAccess.genruntimeconfig.cache
+C:\Users\User\Desktop\RestaurantApp\Server\RestaurantApp\src\RestaurantApp.DataAccess\obj\Debug\net7.0\ref\RestaurantApp.DataAccess.dll
