@@ -9,6 +9,7 @@ public interface IEntityRepository<TEntity, TId>
     Task<TEntity?> GetAsync(Expression<Func<TEntity, bool>> filter);
     Task<IEnumerable<TEntity>> GetAllAsync(Expression<Func<TEntity, bool>> filter = null);
     Task AddAsync(TEntity entity);
+    Task AddRangeAsync(IEnumerable<TEntity> entities);
     Task UpdateAsync(TEntity entity);
     Task DeleteAsync(TEntity entity);
     Task<bool> IsExist(TId id);

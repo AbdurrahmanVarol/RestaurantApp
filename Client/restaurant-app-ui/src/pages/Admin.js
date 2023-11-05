@@ -38,7 +38,7 @@ const Admin = () => {
                 <NavLink to="/createProduct" className="btn text-light d-flex justify-content-center align-items-center" style={{ width: "32%", minHeight: "100px", gap: "5px", backgroundColor: `${colors[Math.floor(Math.random() * colors.length)]}` }}>Ürün Ekle</NavLink>
                 {
                     [...Array(11).keys()].map(p => (
-                        <Button disabled style={{ width: "32%", minHeight: "100px", gap: "5px", backgroundColor: `${colors[Math.floor(Math.random() * colors.length)]}` }}>Deneme Button</Button>
+                        <Button key={p} disabled style={{ width: "32%", minHeight: "100px", gap: "5px", backgroundColor: `${colors[Math.floor(Math.random() * colors.length)]}` }}>Deneme Button</Button>
                     ))
                 }
             </div>

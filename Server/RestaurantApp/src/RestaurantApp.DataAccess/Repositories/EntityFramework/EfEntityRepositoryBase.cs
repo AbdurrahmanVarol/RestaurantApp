@@ -23,6 +23,22 @@ public class EfEntityRepositoryBase<TEntity, TContext, TId> : IEntityRepository<
         await _context.SaveChangesAsync();
     }
 
+    public async Task AddRangeAsync(IEnumerable<TEntity> entities)
+    {
+        using var transaction = _context.Database.BeginTransaction();
+        try
+        {
+            await _context.Set<TEntity>().AddRangeAsync(entities);
+            _context.SaveChanges();
+            transaction.Commit();
+        }
+        catch (Exception)
+        {
+            transaction.Rollback();
+            throw;
+        }
+    }
+
     public async Task DeleteAsync(TEntity entity)
     {
         var deletedEntity = _context.Entry(entity);
@@ -45,5 +61,4 @@ public class EfEntityRepositoryBase<TEntity, TContext, TId> : IEntityRepository<
     }
 
     public async Task<bool> IsExist(TId id) => (await _context.Set<TEntity>().FindAsync(id)) != null;
-
 }

@@ -1,11 +1,13 @@
 import { useFormik } from 'formik'
 import React from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 import { Button, Form, FormGroup, Input } from 'reactstrap'
 import validationSchema from "./validations"
 import alertify from 'alertifyjs'
+import axios from 'axios'
 
 const RegisterForm = () => {
+    const navigate = useNavigate()
     const { handleSubmit, handleChange, handleBlur, values, errors, touched, isSubmitting } = useFormik({
         initialValues: {
             firstName: "",
@@ -16,13 +18,20 @@ const RegisterForm = () => {
             passwordConfirm: "",
         },
         onSubmit: async (values, bag) => {
-            // const result = await registerRequest(values)
-            // if (result) {
-            //     alertify.success('Kayıt olundu')
-            //     bag.resetForm()
-            //     return
-            // }
-            alertify.error('Kayıt olunmadı')
+            axios({
+                baseURL: process.env.REACT_APP_BASE_URL,
+                url: '/auth/register',
+                method: 'post',
+                data: values
+            })
+                .then(response => {
+                    alertify.success('Kayıt olundu')
+                    bag.resetForm()
+                    navigate("/login")
+                })
+                .catch(errors => {
+                    alertify.error('Kayıt olunmadı.\n Lütfen bilgilerinizi kontrol ediniz')
+                })
         },
         validationSchema
     })

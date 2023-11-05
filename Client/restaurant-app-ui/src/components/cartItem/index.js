@@ -5,9 +5,9 @@ const CartItem = ({ productDetail }) => {
         <>
             <li className="list-group-item d-flex justify-content-between align-items-center">
                 <div className="ms-2 me-auto">
-                    {productDetail.name}
+                    {productDetail.product.name}
                 </div>
-                <span className="badge bg-primary rounded">{productDetail.price}&#8378;</span>
+                <p><span className="badge bg-primary rounded">{productDetail.quantity}</span> - <strong>{productDetail.product.price}&#8378;</strong></p>
             </li>
         </>
     )

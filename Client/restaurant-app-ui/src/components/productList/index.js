@@ -1,25 +1,38 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import ProductCard from '../ProductCard'
+import axios from 'axios'
 
 const ProductList = () => {
+    const [products, setProducts] = useState([])
+    useEffect(() => {
+        const baseURL = process.env.REACT_APP_BASE_URL
+        axios(`${baseURL}/products`)
+            .then(response => setProducts(response.data))
+
+        return () => {
+            console.log('asdasd');
+        }
+    }, [])
     return (
         <div className='w-100'>
             <div className='d-flex flex-wrap align-items-center gap-2 w-100'>
 
                 {
-                    [...Array(11).keys()].map(p => (
-                        <ProductCard
-                            key={p}
-                            width={"32%"}
-                            productDetail={{
-                                name: "Tavuk Döner",
-                                description: "Hatay usulü soslu tavuk döner",
-                                price: 90,
-                                imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRW8hqx6sFG6MaS52G7LXx1bNlI2sgz-jizLQ&usqp=CAU"
-                            }}
-                        />
-                    ))
+                    products && products.length > 0 ?
+                        (
+                            products.map((product, index) => (
+                                <ProductCard
+                                    key={index}
+                                    width={"32%"}
+                                    productDetail={product}
+                                />
+                            ))
+                        ) :
+                        (
+                            <h1>Listelenecek Ürün Bulunamadu!!!</h1>
+                        )
+
                 }
             </div>
         </div>

@@ -4,6 +4,8 @@ import { Button, Form, FormGroup, Input } from 'reactstrap'
 import validationSchema from "./validations"
 import { useFormik } from 'formik'
 import DefaultContext from '../../contexts/DefaultContext'
+import axios from 'axios'
+import alertify from 'alertifyjs'
 
 const LoginForm = () => {
     const { setToken, setExpire, setUserName, setUserRole } = useContext(DefaultContext)
@@ -15,20 +17,27 @@ const LoginForm = () => {
             isKeepLoggedIn: true
         },
         onSubmit: async (values, bag) => {
-            // let a = { ...values, isKeepLoggedIn: true }
+            let a = { ...values, isKeepLoggedIn: true }
+            axios({
+                baseURL: process.env.REACT_APP_BASE_URL,
+                url: '/auth/login',
+                method: 'post',
+                data: a
+            })
+                .then(response => {
+                    console.log(response.data)
+                    setToken(response.data.token)
+                    setExpire(response.data.expire)
+                    setUserName(response.data.userName)
+                    setUserRole(response.data.userRole)
+                    alertify.success("Başarılı bir şekilde giriş yapıldı.")
+                    navigate("/")
+                })
+                .catch(errors => {
+                    console.log(errors)
+                    alertify.error("Kullanıcı adı ya da şifre hatalı.\nLütfen tekrar deneyiniz.")
+                })
 
-            // const result = await loginRequest(a)
-
-            // if (result.status == 200) {
-            //     setToken(result.res.token)
-            //     setExpire(result.res.expire)
-            //     setBloodGroup(result.res.bloodGroup)
-            //     setCity(result.res.city)
-            //     setUserName(result.res.userName)
-            //     setUserRole(result.res.userRole)
-            //     navigate("/")
-            //     return
-            // }
             bag.resetForm()
         },
         validationSchema

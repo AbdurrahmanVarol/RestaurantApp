@@ -100,6 +100,8 @@ public class AuthService : IAuthService
         var user = _mapper.Map<User>(registerRequest);
         user.PasswordSalt = passwordSalt;
         user.PasswordHash = passwordHash;
+        user.RoleId = 2;
+        user.RefreshToken = Guid.NewGuid().ToString();
         await _userService.AddAsync(user);
     }
 

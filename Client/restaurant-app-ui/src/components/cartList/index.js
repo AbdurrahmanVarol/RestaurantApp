@@ -1,18 +1,17 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import CartItem from '../cartItem'
+import DefaultContext from "../../contexts/DefaultContext";
 
-const CartList = ({ products }) => {
+const CartList = ({ cartList }) => {
+
     return (
         <div>
             <ol class="list-group list-group-numbered">
                 {
-                    [...Array(3).keys()].map(p => (
+                    cartList && cartList.map((product, index) => (
                         <CartItem
-                            key={p}
-                            productDetail={{
-                                name: "Tavuk Döner",
-                                price: 90
-                            }} />
+                            key={index}
+                            productDetail={product} />
                     ))
                 }
             </ol>

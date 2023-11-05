@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import Styles from './style.module.css'
 import DefaultContext from "../../contexts/DefaultContext";
@@ -19,11 +19,13 @@ import {
 } from 'reactstrap';
 const Navi = () => {
   const navigate = useNavigate();
-  const { token, userName, userRole, clearData } = useContext(DefaultContext);
+  const { token, userName, userRole, clearData, getCartLength } = useContext(DefaultContext);
 
   const [isOpen, setIsOpen] = useState(false);
-
   const toggle = () => setIsOpen(!isOpen);
+
+  useEffect(() => {
+  }, [getCartLength()])
   return (
     <div>
       {/* <header className="mb-3 shadow-sm p-3">
@@ -65,11 +67,14 @@ const Navi = () => {
                 <NavItem>
                   <NavLink to="/admin" className="nav-link">Admin Panel</NavLink>
                 </NavItem>
+                <NavItem>
+                  <NavLink to="/orderDetails" className="nav-link">Siparişlerim</NavLink>
+                </NavItem>
               </Nav>
-              <NavLink to="cart" className="btn btn-primary position-relative" style={{ marginRight: "50px" }}>
+              <NavLink to="cart" className="btn btn-primary position-relative" style={{ marginRight: "2vh" }}>
                 Sepet
                 <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                  3
+                  {getCartLength()}
                   <span className="visually-hidden">unread messages</span>
                 </span>
               </NavLink>

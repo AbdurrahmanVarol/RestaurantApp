@@ -9,6 +9,7 @@ import DefaultLayout from './layouts/DefaultLayout';
 import Admin from './pages/Admin';
 import CreateProduct from './pages/CreateProduct';
 import Cart from './pages/Cart';
+import OrderDetail from './pages/OrderDetail';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
               <Route path='/admin' element={<Admin />}></Route>
               <Route path='/createProduct' element={<CreateProduct />}></Route>
               <Route path='/cart' element={<Cart />}></Route>
+              <Route path='/orderDetails' element={<OrderDetail />}></Route>
             </Route>
           </Routes>
         </BrowserRouter>
