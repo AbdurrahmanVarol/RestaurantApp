@@ -60,5 +60,5 @@ public class EfEntityRepositoryBase<TEntity, TContext, TId> : IEntityRepository<
         await _context.SaveChangesAsync();
     }
 
-    public async Task<bool> IsExist(TId id) => (await _context.Set<TEntity>().FindAsync(id)) != null;
+    public async Task<bool> IsExistAsync(TId id) => (await _context.Set<TEntity>().FindAsync(id)) != null;
 }

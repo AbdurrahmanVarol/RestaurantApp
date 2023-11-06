@@ -5,4 +5,5 @@ public interface ICategoryService
 {
     Task<IEnumerable<CategoryResponse>> GetGategoriesAsync();
     Task<CategoryResponse> GetCategoryByIdAsync(int id);
+    Task<bool> IsExistAsync(int categoryId);
 }

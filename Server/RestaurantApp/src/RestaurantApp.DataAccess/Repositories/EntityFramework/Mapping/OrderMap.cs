@@ -20,5 +20,7 @@ public class OrderMap : IEntityTypeConfiguration<Order>
             .WithMany(p => p.Orders)
             .HasForeignKey(p => p.ProductId)
             .OnDelete(DeleteBehavior.NoAction);
+
+        builder.Navigation(p => p.Product).AutoInclude();
     }
 }

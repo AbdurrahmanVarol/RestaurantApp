@@ -1,14 +1,20 @@
 import React, { useEffect, useState } from 'react'
-import { NavLink } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import ProductCard from '../ProductCard'
 import axios from 'axios'
 
 const ProductList = () => {
+    const navigate = useNavigate()
     const [products, setProducts] = useState([])
     useEffect(() => {
         const baseURL = process.env.REACT_APP_BASE_URL
         axios(`${baseURL}/products`)
             .then(response => setProducts(response.data))
+            .catch(errors => {
+                if (errors.response.status === 500) {
+                    navigate("/page500")
+                }
+            })
 
         return () => {
             console.log('asdasd');
@@ -32,7 +38,6 @@ const ProductList = () => {
                         (
                             <h1>Listelenecek Ürün Bulunamadu!!!</h1>
                         )
-
                 }
             </div>
         </div>

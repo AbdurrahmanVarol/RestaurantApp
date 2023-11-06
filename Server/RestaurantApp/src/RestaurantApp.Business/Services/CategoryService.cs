@@ -25,4 +25,9 @@ public class CategoryService : ICategoryService
         var categories = await _categoryRepository.GetAllAsync();
         return _mapper.Map<IEnumerable<CategoryResponse>>(categories);
     }
+
+    public async Task<bool> IsExistAsync(int categoryId)
+    {
+        return await _categoryRepository.IsExistAsync(categoryId);
+    }
 }

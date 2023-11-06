@@ -4,6 +4,7 @@ using Microsoft.Extensions.DependencyInjection;
 using RestaurantApp.DataAccess.Interfaces;
 using RestaurantApp.DataAccess.Repositories.EntityFramework;
 using RestaurantApp.DataAccess.Repositories.EntityFramework.Contexts;
+using RestaurantApp.DataAccess.Transaction;
 
 namespace RestaurantApp.DataAccess;
 public static class DependencyResolver
@@ -22,5 +23,7 @@ public static class DependencyResolver
         services.AddScoped<IUserRepository, EfUserRepository>();
         services.AddScoped<ICategoryRepository, EfCategoryRepository>();
         services.AddScoped<IRoleRepository, EfRoleRepository>();
+
+        services.AddScoped<IDatabaseTransaction, EfDatabaseTransaction>();
     }
 }

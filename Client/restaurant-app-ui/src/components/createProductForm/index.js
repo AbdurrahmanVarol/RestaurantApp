@@ -1,12 +1,17 @@
 import React, { useContext } from 'react'
-import { NavLink, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { Button, Form, FormGroup, Input } from 'reactstrap'
 import validationSchema from "./validations"
 import { useFormik } from 'formik'
 import DefaultContext from '../../contexts/DefaultContext'
 import CategorySelect from '../categorySelect'
+import alertify from 'alertifyjs'
+import axios from 'axios'
 
 const CreateProductForm = () => {
+    const { token } = useContext(DefaultContext)
+    const navigate = useNavigate()
+
     const { handleSubmit, handleChange, handleBlur, values, errors, touched, isSubmitting } = useFormik({
         initialValues: {
             name: "",
@@ -16,8 +21,29 @@ const CreateProductForm = () => {
             categoryId: 0
         },
         onSubmit: async (values, bag) => {
-            console.log(values)
-            //bag.resetForm()
+            axios({
+                baseURL: process.env.REACT_APP_BASE_URL,
+                url: '/products',
+                method: 'post',
+                headers: {
+                    "Authorization": `Bearer ${token}`
+                },
+                data: values
+            })
+                .then(response => {
+                    console.log(response.data)
+
+                    alertify.success("Başarılı bir şekilde ürün oluşturuldu.")
+                    bag.resetForm()
+                })
+                .catch(errors => {
+                    console.log(errors)
+                    if (errors.response.status === 500) {
+                        navigate("/page500")
+                    }
+                    alertify.error("Lütfen ürün bilgilerini doğru biçinde giriniz.")
+                })
+
         },
         validationSchema
     })

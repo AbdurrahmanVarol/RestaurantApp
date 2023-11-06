@@ -41,11 +41,11 @@ export const DefaultContextProvider = ({ children }) => {
     const addToCart = (product) => {
         let prevCart = JSON.parse(`${cart}`)
 
-        const hasProduct = prevCart.some(p => p.product.id == product.id)
+        const hasProduct = prevCart.some(p => p.product.id === product.id)
 
         let newCart = prevCart
         if (hasProduct) {
-            newCart.find(p => p.product.id == product.id).quantity += 1
+            newCart.find(p => p.product.id === product.id).quantity += 1
         } else {
             newCart.push({
                 product,
@@ -57,7 +57,7 @@ export const DefaultContextProvider = ({ children }) => {
 
     const removeFromCart = (productId) => {
         let newCart = cart
-        const deletedProduct = newCart.find(p => p.product.id == productId)
+        const deletedProduct = newCart.find(p => p.product.id === productId)
         var index = newCart.indexOf(deletedProduct);
         if (index !== -1) {
             newCart.splice(index, 1);

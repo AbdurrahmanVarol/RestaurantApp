@@ -19,8 +19,4 @@
     <ProjectReference Include="..\RestaurantApp.Entities\RestaurantApp.Entities.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Validators\FluentValidation\" />
-  </ItemGroup>
-
 </Project>

@@ -16,5 +16,6 @@ public class DefaultMapper : Profile
             .ForMember(p => p.PasswordSalt, d => d.MapFrom(m => string.Empty));
 
         CreateMap<CreateOrderRequest, Order>();
+        CreateMap<CreateProductRequest, Product>();
     }
 }

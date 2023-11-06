@@ -74,7 +74,7 @@ namespace RestaurantApp.DataAccess.Migrations
                         .HasColumnType("uniqueidentifier")
                         .HasDefaultValueSql("NEWID()");
 
-                    b.Property<int>("CategortId")
+                    b.Property<int>("CategoryId")
                         .HasColumnType("int");
 
                     b.Property<string>("Description")
@@ -94,7 +94,7 @@ namespace RestaurantApp.DataAccess.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CategortId");
+                    b.HasIndex("CategoryId");
 
                     b.ToTable("Products");
                 });
@@ -183,7 +183,7 @@ namespace RestaurantApp.DataAccess.Migrations
                 {
                     b.HasOne("RestaurantApp.Entities.Entities.Category", "Category")
                         .WithMany("Products")
-                        .HasForeignKey("CategortId")
+                        .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

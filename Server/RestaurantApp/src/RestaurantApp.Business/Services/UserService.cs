@@ -22,4 +22,6 @@ public class UserService : IUserService
     public async Task<User?> GetUserByIdAsync(Guid id) => await _userRepository.GetAsync(p => p.Id == id);
 
     public async Task<User?> GetUserByRefreshTokenAndUserId(string refreshToken, Guid userId) => await _userRepository.GetAsync(p => p.RefreshToken.Equals(refreshToken) && p.Id == userId);
+
+    public Task<bool> IsExistAsync(Guid userId) => _userRepository.IsExistAsync(userId);
 }

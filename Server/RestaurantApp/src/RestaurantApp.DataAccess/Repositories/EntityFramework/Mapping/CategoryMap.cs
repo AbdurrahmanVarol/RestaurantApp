@@ -11,7 +11,7 @@ public class CategoryMap : IEntityTypeConfiguration<Category>
 
         builder.HasMany(p => p.Products)
             .WithOne(p => p.Category)
-            .HasForeignKey(p => p.CategortId)
+            .HasForeignKey(p => p.CategoryId)
             .OnDelete(DeleteBehavior.Cascade);
     }
 }

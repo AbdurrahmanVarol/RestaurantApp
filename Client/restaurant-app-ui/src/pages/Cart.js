@@ -4,11 +4,12 @@ import { Button } from 'reactstrap'
 import DefaultContext from '../contexts/DefaultContext'
 import axios from 'axios'
 import alertify from 'alertifyjs'
+import { useNavigate } from 'react-router-dom'
 
 const Cart = () => {
     const { token, getCartAsList, clearCart } = useContext(DefaultContext)
     const cartList = getCartAsList()
-
+    const navigate = useNavigate()
     const getTotalQuantity = () => {
         let quantity = 0
         for (let item of cartList) {
@@ -47,6 +48,9 @@ const Cart = () => {
             .catch(errors => {
                 console.log(errors)
                 alertify.error("Satın alma işleminde bir hata meydana geldi.Lütfen daha sonra tekrar deneyiniz.")
+                if (errors.response.status === 500) {
+                    navigate("/page500")
+                }
             })
     }
     return (

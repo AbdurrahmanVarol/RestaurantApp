@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using RestaurantApp.Api.Middlewares;
 using RestaurantApp.Business;
 using RestaurantApp.DataAccess.Repositories.EntityFramework.Contexts;
 using RestaurantApp.DataAccess.Repositories.EntityFramework.Seeding;
@@ -16,7 +17,7 @@ builder.Services.AddEndpointsApiExplorer();
 
 builder.Services.AddSwaggerGen(option =>
 {
-    option.SwaggerDoc("v1", new OpenApiInfo { Title = "BloodDonationApp API", Version = "v1" });
+    option.SwaggerDoc("v1", new OpenApiInfo { Title = "RestaurantApp API", Version = "v1" });
     option.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
     {
         In = ParameterLocation.Header,
@@ -79,6 +80,8 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.UseCors(p => p.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
+
+app.UseMiddleware<ExceptionHandleMiddleware>();
 
 using var scope = app.Services.GetService<IServiceScopeFactory>()?.CreateScope();
 var services = scope.ServiceProvider;

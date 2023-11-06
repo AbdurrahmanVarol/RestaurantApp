@@ -65,7 +65,7 @@ public class AuthService : IAuthService
             UserName = $"{user.FirstName} {user.LastName}",
             Expire = DateTime.Now.AddDays(5),
             RefreshToken = user.RefreshToken,
-            UserRole = user.Role
+            UserRole = user.RoleId
         };
         return response;
     }
@@ -116,7 +116,7 @@ public class AuthService : IAuthService
             UserName = $"{user.FirstName} {user.LastName}",
             Expire = DateTime.Now.AddDays(5),
             RefreshToken = user.RefreshToken,
-            UserRole = user.Role
+            UserRole = user.RoleId
         };
         return response;
     }

@@ -1,5 +1,4 @@
 import alertify from 'alertifyjs'
-import { Button } from 'bootstrap'
 import React, { useContext } from 'react'
 import DefaultContext from '../../contexts/DefaultContext'
 

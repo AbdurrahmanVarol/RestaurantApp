@@ -30,6 +30,9 @@ const RegisterForm = () => {
                     navigate("/login")
                 })
                 .catch(errors => {
+                    if (errors.response.status === 500) {
+                        navigate("/page500")
+                    }
                     alertify.error('Kayıt olunmadı.\n Lütfen bilgilerinizi kontrol ediniz')
                 })
         },

@@ -7,9 +7,10 @@ const OrderDetailList = ({ orderDetails }) => {
       {
         orderDetails.map((orderDetail, index) => (
           <tr key={index}>
-            <td>{moment(orderDetail.date).format("DD/MM/yyyy HH:mm:ss")}</td>
-            <td>{orderDetail.productName}</td>
-            <td>{orderDetail.price}</td>
+            <td>{moment(orderDetail.createdAt).format("DD/MM/yyyy HH:mm:ss")}</td>
+            <td>{orderDetail.product.name}</td>
+            <td>{orderDetail.quantity}</td>
+            <td>{orderDetail.product.price}</td>
           </tr>
         ))
       }

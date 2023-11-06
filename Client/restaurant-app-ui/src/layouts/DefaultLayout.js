@@ -8,20 +8,19 @@ const DefaultLayout = () => {
   const navigate = useNavigate()
 
   useEffect(() => {
-    // if (!token || token === "") {
-    //   clearData();
-    //   navigate("/login");
-    //   return
-    // }
-    // let now = new Date().getTime();
-    // let expireDate = new Date(expire).getTime();
+    if (!token || token === "") {
+      clearData();
+      navigate("/login");
+      return
+    }
+    let now = new Date().getTime();
+    let expireDate = new Date(expire).getTime();
 
-    // if (now > expireDate) {
-    //   //TODO:Refresh token eklenecek
-    //   clearData();
-    //   navigate("/login");
-    //   return
-    // }
+    if (now > expireDate) {
+      clearData();
+      navigate("/login");
+      return
+    }
   }, [token, expire]);
   return (
     <div className="default vh-100">

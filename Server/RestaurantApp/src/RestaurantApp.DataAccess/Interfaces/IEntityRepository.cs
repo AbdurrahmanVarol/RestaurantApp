@@ -12,5 +12,5 @@ public interface IEntityRepository<TEntity, TId>
     Task AddRangeAsync(IEnumerable<TEntity> entities);
     Task UpdateAsync(TEntity entity);
     Task DeleteAsync(TEntity entity);
-    Task<bool> IsExist(TId id);
+    Task<bool> IsExistAsync(TId id);
 }

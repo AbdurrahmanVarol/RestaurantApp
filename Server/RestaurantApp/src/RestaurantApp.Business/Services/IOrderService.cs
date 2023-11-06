@@ -4,7 +4,8 @@ using RestaurantApp.Business.Dtos.Responses;
 namespace RestaurantApp.Business.Services;
 public interface IOrderService
 {
-    Task<IEnumerable<OrderResponse>> GetOrdersAsync();
+    Task<IEnumerable<OrderResponse>> GetOrdersByUserIdAsync(Guid userId);
     Task<OrderResponse> GetOrderAsync(Guid id);
     Task AddRange(CreateOrdersRequest createOrdersRequest, Guid userId);
+    Task<IEnumerable<OrderResponse>> GetOrdersByDateAsync(OrdersByDateRequest request);
 }

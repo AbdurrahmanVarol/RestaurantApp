@@ -31,14 +31,16 @@ const LoginForm = () => {
                     setUserName(response.data.userName)
                     setUserRole(response.data.userRole)
                     alertify.success("Başarılı bir şekilde giriş yapıldı.")
+                    bag.resetForm()
                     navigate("/")
                 })
                 .catch(errors => {
                     console.log(errors)
+                    if (errors.response.status === 500) {
+                        navigate("/page500")
+                    }
                     alertify.error("Kullanıcı adı ya da şifre hatalı.\nLütfen tekrar deneyiniz.")
                 })
-
-            bag.resetForm()
         },
         validationSchema
     })

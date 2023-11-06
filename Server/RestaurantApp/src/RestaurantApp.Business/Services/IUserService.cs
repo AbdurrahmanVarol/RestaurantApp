@@ -7,4 +7,5 @@ public interface IUserService
     Task<User?> GetByUsernameAsync(string userName);
     Task<User?> GetUserByIdAsync(Guid id);
     Task<User?> GetUserByRefreshTokenAndUserId(string refreshToken, Guid userId);
+    Task<bool> IsExistAsync(Guid userId);
 }
