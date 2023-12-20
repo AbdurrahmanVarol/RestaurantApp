@@ -1,7 +1,7 @@
 # RestaurantApp
 
 
-### Rmos yazilim case study/assessment
+### case study/assessment
 
 
 ### Proje gereksinimleri
